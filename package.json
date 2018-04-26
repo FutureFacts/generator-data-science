@@ -26,6 +26,7 @@
   "homepage": "https://github.com/FutureFacts/generator-ff-data-science#readme",
   "dependencies": {
     "chalk": "^2.4.1",
+    "generator-git-init": "^1.1.3",
     "yeoman-generator": "^2.0.4",
     "yosay": "^2.0.2"
   }

@@ -99,6 +99,48 @@ module.exports = class extends Generator {
                 
             }
         )
+
+        // Copy readme file
+        this.fs.copyTpl(
+            this.templatePath('python_project/README.md'),
+            this.destinationPath('README.md'),
+            { 
+                projectName: this.answers.projectName,
+                creator: this.answers.creator  
+            }
+        )
+
+        // Copy .gitignore
+        this.fs.copyTpl(
+            this.templatePath('python_project/.gitignore.template'),
+            this.destinationPath('.gitignore'),
+        )
+
+        // Create project directory structure
+        this.fs.copyTpl(
+            this.templatePath('python_project/.gitkeep'),
+            this.destinationPath('data/.gitkeep'),
+        )
+
+        this.fs.copyTpl(
+            this.templatePath('python_project/.gitkeep'),
+            this.destinationPath('notebooks/.gitkeep'),
+        )
+
+        this.fs.copyTpl(
+            this.templatePath('python_project/__init__.py'),
+            this.destinationPath('lib/load/__init__.py'),
+        )
+
+        this.fs.copyTpl(
+            this.templatePath('python_project/__init__.py'),
+            this.destinationPath('lib/transform/__init__.py'),
+        )
+
+        this.fs.copyTpl(
+            this.templatePath('python_project/__init__.py'),
+            this.destinationPath('lib/model/__init__.py'),
+        )
     }
 
     install() {
@@ -116,5 +158,10 @@ module.exports = class extends Generator {
             }
         })
 
+        // Set up git for this project
+        this.composeWith(
+            require.resolve('generator-git-init/generators/app'),
+            { commit: "Initial commit" }
+        )
     }
 };
