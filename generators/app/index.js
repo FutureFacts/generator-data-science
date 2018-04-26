@@ -141,6 +141,11 @@ module.exports = class extends Generator {
             this.templatePath('python_project/__init__.py'),
             this.destinationPath('lib/model/__init__.py'),
         )
+
+        this.fs.copyTpl(
+            this.templatePath('python_project/bootstrap.py'),
+            this.destinationPath('lib/bootstrap.py'),
+        )
     }
 
     install() {
