@@ -1,7 +1,7 @@
 {
-  "name": "generator-ff-data-science",
+  "name": "generator-data-science",
   "version": "0.1.0",
-  "description": "A generator to set-up a standardized project structure for any Data Science project undertaken within Future Facts.",
+  "description": "A generator to set-up a standardized project structure for any Data Science project.",
   "files": [
     "generators"
   ],
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FutureFacts/generator-ff-data-science.git"
+    "url": "git+https://github.com/FutureFacts/generator-data-science.git"
   },
   "keywords": [
     "Generator",
@@ -21,9 +21,9 @@
   ],
   "author": "Floris Hoogenboom (floris.hoogenboom@futurefacts.nl)",
   "bugs": {
-    "url": "https://github.com/FutureFacts/generator-ff-data-science/issues"
+    "url": "https://github.com/FutureFacts/generator-data-science/issues"
   },
-  "homepage": "https://github.com/FutureFacts/generator-ff-data-science#readme",
+  "homepage": "https://github.com/FutureFacts/generator-data-science#readme",
   "dependencies": {
     "chalk": "^2.4.1",
     "generator-git-init": "^1.1.3",
