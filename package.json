@@ -20,6 +20,7 @@
     "yeoman-generator"
   ],
   "author": "Floris Hoogenboom (floris.hoogenboom@futurefacts.nl)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/FutureFacts/generator-data-science/issues"
   },
