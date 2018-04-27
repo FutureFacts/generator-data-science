@@ -35,8 +35,9 @@ module.exports = class extends Generator {
         // We do not support R for the moment
         if (answers.language === 'R') {
             this.env.error(yosay(
-                `R? Really? Go get yourself a real language.
-                    I won't scaffold this for you, bye.`
+                `R? Really? Are you sure?
+                    Currently I don't have any support for
+                    scafolding R projects. Feel free to create a PR.`
             ))
             this._cleanUpOnFail()
         }
