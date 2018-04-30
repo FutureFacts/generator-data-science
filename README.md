@@ -16,3 +16,14 @@ You will now be asked a few questions on your project. Answer those. Once, you'r
 
 ## Dependencies
 Yeoman uses `conda` to set-up a development environment for you in the background. Make sure `conda` is installed before you run this generator.
+
+## What does this scaffold for me?
+This generator initializes a standardized structure that is generic enough to be used with almost any data science project.
+The generated project structure consists of the following folders:
+- `data`: In this folder you should store your raw data, this folder is excluded from  version control
+- `notebooks`: A folder for your notebooks, or any unstructured scratch files
+- `lib`: This folder is comprised of three subfolders, each relating to one of the stages in your modeling project. The goal of this folder is to structure you project into a reusable format that can be run simply by calling a single script (for the Python generator this is `lib/bootstrap.py`).
+
+Futhermore the generator automatically creates a `conda` environment for you. At creation time you can indicate if you want some specific dependencies, e.g. for deep learning projects. 
+
+Lastly, this generator configures version control (Git) for your project and makes an intial commit of the empty project structure.
