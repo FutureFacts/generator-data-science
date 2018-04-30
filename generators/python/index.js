@@ -52,7 +52,9 @@ module.exports = class extends Generator {
             this.destinationPath('env.yml'),
             { 
                 envName: this.answers.projectName,
-                jupyter: this.answers.additionalModules.includes('jupyter')  
+                jupyter: this.answers.additionalModules.includes('jupyter'),
+                bayesianStatistics: this.answers.additionalModules.includes('Bayesian Statistics'),
+                deepLearning: this.answers.additionalModules.includes('Deep Learning')
             }
         )
 
