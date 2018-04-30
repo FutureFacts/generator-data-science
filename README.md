@@ -15,7 +15,7 @@ yo data-science
 You will now be asked a few questions on your project. Answer those. Once, you're done Yeoman will scafold a standard project structure for you.
 
 ## Dependencies
-Yeoman uses `conda` to set-up a development environment for you in the background. Make sure `conda` is installed before you run this generator.
+Yeoman uses `conda` to set-up a development environment for you in the background. Make sure `conda` is installed before you run this generator and make sure it is on your path.
 
 ## What does this scaffold for me?
 This generator initializes a standardized structure that is generic enough to be used with almost any data science project.
