@@ -27,14 +27,19 @@ module.exports = class extends Generator {
             {
                 type: 'input',
                 name: 'projectName',
-                message: 'What is the name of this project, no whitespaces allowed?',
-                validate: answer => answer.length > 3 && ! /\s/.test(answer)
+                message: 'What is the name of this project?',
+                validate: answer => {
+                    if (answer.length > 3 && ! /\s/.test(answer))
+                        return true
+                    return 'Project name should be at least 3 characters and ' +
+                        'should not contain any whitespaces.'
+                }
             },
             {
                 type: 'checkbox',
                 name: 'additionalModules',
                 message: 'What additional tools would you like installed?',
-                choices: ['jupyter']
+                choices: ['jupyter', 'Bayesian Statistics', 'Deep Learning']
             }
         ]).then(this._storeAnswers.bind(this))
     }
