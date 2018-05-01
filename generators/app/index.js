@@ -5,7 +5,7 @@ const fs = require('fs')
 const promisify = require('util').promisify
 
 module.exports = class extends Generator {
-    initializing() {
+    async initializing() {
         /*  Initialization actions for the generator. 
             Checks if the current directory is empty. */
         this.log(yosay(
@@ -15,14 +15,10 @@ module.exports = class extends Generator {
         ));
 
         // Check if working directory is empty, if not raise
-        return promisify(fs.readdir)(this.destinationRoot())
-            .then((files) => {
-                if (files.length > 0) {
-                    this.env.error(
-                        'Directory is not empty, cannot scafold project here.'
-                    )
-                }
-            })
+        let files = await promisify(fs.readdir)(this.destinationRoot())
+        if (files.length > 0) {
+            this.env.error('Directory is not empty, cannot scafold here.')
+        }
     }
 
     _cleanUpOnFail() {
@@ -46,26 +42,22 @@ module.exports = class extends Generator {
                 'Great choice of language!'
             ))
         }
-
-        return answers
     }
 
-    _storeAnswers(answers) {
-        this.answers = answers
-
-        return answers
-    }
-
-    prompting() {
-        return this.prompt([
+    async prompting() {
+        let answers = await this.prompt([
             {
                 type: 'list',
                 name: 'language',
                 message: 'What language will you be working in?',
                 choices: ['R', 'Python']
             }
-        ]).then(this._validateAnswers.bind(this))
-        .then(this._storeAnswers.bind(this))
+        ])
+        
+        this._validateAnswers(answers)
+
+        // Store answers for later use
+        this.answers = answers
     }
 
     install() {
